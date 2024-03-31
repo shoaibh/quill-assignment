@@ -22,7 +22,7 @@ const findFile = (data: Data, id: string): Data | null => {
   return null;
 };
 
-export const IDE = () => {
+export default function IDEDefault() {
   const searchParams = useSearchParams();
 
   const file = searchParams.get("file");
@@ -58,4 +58,4 @@ export const IDE = () => {
       <Editor onFileClick={onFileClick} />
     </>
   );
-};
+}

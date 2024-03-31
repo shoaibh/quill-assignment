@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Data } from "./directory";
+import Image from "next/image";
+import { DirectoryFile } from "./DirectoryFile";
 
 type Props = {
   folders: Data;
@@ -14,7 +16,6 @@ export const Folders = ({ folders, onFileClick, selectedFile }: Props) => {
 
   const inSelectedPath = selectedFile?.includes(folders.path);
 
-  console.log("==", { selectedFile, f: folders.path, inSelectedPath });
   useEffect(() => {
     setExpand((expand) => (!!inSelectedPath ? true : expand));
   }, [inSelectedPath]);
@@ -23,12 +24,22 @@ export const Folders = ({ folders, onFileClick, selectedFile }: Props) => {
 
   if (folders.isFolder) {
     return (
-      <div style={{ marginTop: 5 }}>
-        <div onClick={() => setExpand(!expand)} className="flex cursor-pointer" style={{ border: inSelectedPath ? "1px solid white" : "" }}>
-          <span>📁 {folders.name}</span>
+      <div className="mt-4 ml-[-16px] pl-4">
+        <div onClick={() => setExpand(!expand)} className="flex cursor-pointer">
+          <div className={`flex gap-2 items-center text-sm ${expand ? "text-selectedTextColor" : "text-white"}`}>
+            <Image
+              src={expand ? "/selected-arrow.svg" : "/unselected-arrow.svg"}
+              alt="arrow"
+              width={expand ? 10 : 6}
+              height={expand ? 6 : 10}
+            />
+            <Image src={expand ? "/selected-folder.svg" : "/unselected-folder.svg"} alt="arrow" width={16} height={14} />
+
+            {folders.name}
+          </div>
         </div>
 
-        <div style={{ display: expand ? "flex" : "none", paddingLeft: 25 }} className="flex-col cursor-pointer">
+        <div style={{ display: expand ? "flex" : "none", paddingLeft: 36, marginLeft: -16 }} className="flex-col cursor-pointer">
           {folders.items.map((exp) => {
             return <Folders key={exp.id} folders={exp} onFileClick={onFileClick} selectedFile={selectedFile} />;
           })}
@@ -36,10 +47,6 @@ export const Folders = ({ folders, onFileClick, selectedFile }: Props) => {
       </div>
     );
   } else {
-    return (
-      <span className="file" style={{ border: isSelectedFile ? "1px solid white" : "" }} onClick={() => onFileClick(folders.id)}>
-        📄 {folders.name}
-      </span>
-    );
+    return <DirectoryFile onFileClick={onFileClick} folders={folders} isSelectedFile={isSelectedFile} />;
   }
 };

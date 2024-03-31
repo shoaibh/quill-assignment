@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import { FileContextProvider } from "./file-context";
 import { Header } from "@/components/header";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { MainBreadCrumbs } from "./main-breadcrumbs";
+import { Suspense } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({ weight: ["400"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,12 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <main className="p-[25px] h-screen bg-[#0D0F11] text-white flex flex-col ">
           <FileContextProvider>
             <Header />
-            <Breadcrumbs />
-            {children}
+            <MainBreadCrumbs />
+            <Suspense>{children}</Suspense>
           </FileContextProvider>
         </main>
       </body>
