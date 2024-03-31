@@ -172,7 +172,7 @@ export const issuesCount = [
   },
   {
     label: "Informational Issues",
-    slug: "high-severity-issues",
+    slug: "informational-issues",
     count: 68,
     items: [
       {

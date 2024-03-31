@@ -54,7 +54,7 @@ export default function IDE() {
 
   return (
     <>
-      <Directory onFileClick={onFileClick} selectedFile={selectedFile.path} />
+      <Directory onFileClick={onFileClick} selectedFile={selectedFile?.path} />
       <Editor onFileClick={onFileClick} />
     </>
   );

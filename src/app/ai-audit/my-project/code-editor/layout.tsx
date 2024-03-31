@@ -7,7 +7,7 @@ export default function ProjectLayout({ children, ide, issues }: { children: Rea
       <div className=" flex-1 bg-[#191D23] px-4 py-3 rounded">
         <ProjectHeader />
         {children}
-        <div className="flex mt-3 gap-3">
+        <div className="flex mt-3 gap-3 max-w-full">
           {ide}
           {issues}
         </div>

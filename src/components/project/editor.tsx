@@ -32,13 +32,13 @@ export const Editor = ({ onFileClick }: { onFileClick: (id: string) => void }) =
         console.error("Error fetching text file:", error);
       }
     };
-    if (Object.keys(selectedFile).length > 0) {
+    if (selectedFile && Object.keys(selectedFile).length > 0) {
       fetchTextFile();
     }
   }, [selectedFile]);
 
   return (
-    <div className="grow-[2]">
+    <div className="max-w-[50%] rounded">
       <MultipleFiles onFileClick={onFileClick} />
       <MonacoEditor
         options={{

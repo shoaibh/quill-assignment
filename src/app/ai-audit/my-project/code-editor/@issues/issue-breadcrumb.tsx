@@ -14,7 +14,6 @@ export const IssueBreadCrumbs = () => {
       .filter((crumb) => crumb !== "")
       .map((crumb) => {
         currentLink += `/${crumb}`;
-        console.log("=", { crumb, pathname });
         return {
           label: crumb
             .split("-")

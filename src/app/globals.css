@@ -9,6 +9,35 @@
   --secondary-text-color: #CCCCCC;
 }
 
+.folder:hover {
+  color:#007AFF;
+}
+.folder:hover >svg >path {
+  fill: #007AFF;
+}
+
+.folder > svg {
+  transition: transform 0.3s ease;
+}
+
+.folder > svg.selected {
+  transform: rotate(90deg);
+}
+
+.folder > .selected > path {
+  fill: #007AFF;
+ 
+}
+
+.cross-icon:hover {
+  background-color: white;
+  border-radius: 999px;
+}
+
+.cross-icon:hover > svg > path {
+  fill: black; 
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

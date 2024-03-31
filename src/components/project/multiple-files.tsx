@@ -1,5 +1,6 @@
 import { useFileContext } from "@/app/file-context";
 import React from "react";
+import CrossIcon from "./Cross.svg";
 
 export const MultipleFiles = ({ onFileClick }: { onFileClick: (id: string) => void }) => {
   const { openedFiles, selectedFile, setOpenedFiles, setSelectedFile } = useFileContext();
@@ -16,21 +17,25 @@ export const MultipleFiles = ({ onFileClick }: { onFileClick: (id: string) => vo
   };
 
   return (
-    <div className="flex gap-2">
-      {openedFiles.map((file) => (
-        <div
-          className="px-5 py-2 bg-slate-900 text-slate-600 cursor-pointer"
-          style={{ backgroundColor: file.id === selectedFile.id ? "#007AFF" : "", color: "white" }}
-          onClick={() => onFileClick(file.id)}
-          key={file.id}
-        >
-          {file.name}
+    <div className="flex text-sm bg-[#1E232B] overflow-scroll ">
+      {openedFiles.map((file) => {
+        const isSelected = file.id === selectedFile.id;
+        return (
+          <div
+            className={`flex justify-between items-center pl-5 pr-4 py-2 bg-slate-900 text-slate-600 cursor-pointer ${
+              isSelected ? "bg-[#007AFF] rounded-tl rounded-tr text-white" : "text-[#5D677D]"
+            }   border-r border-solid border-white/5 whitespace-nowrap`}
+            onClick={() => onFileClick(file.id)}
+            key={file.id}
+          >
+            {file.name}
 
-          <span onClick={(e) => onRemove(e, file.id)} className="ml-4">
-            X
-          </span>
-        </div>
-      ))}
+            <span onClick={(e) => onRemove(e, file.id)} className="ml-5 p-1 cross-icon">
+              <CrossIcon />
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 };

@@ -4,6 +4,7 @@ const data = {
   isFolder: true,
   path: "/root",
   fileContentPath: "",
+  depth: 1,
   items: [
     {
       id: "2",
@@ -11,6 +12,7 @@ const data = {
       isFolder: true,
       path: "/root/public",
       fileContentPath: "",
+      depth: 2,
       items: [
         {
           id: "3",
@@ -18,6 +20,7 @@ const data = {
           isFolder: true,
           path: "/root/public/public nested 1",
           fileContentPath: "",
+          depth: 3,
           items: [
             {
               id: "4",
@@ -26,6 +29,7 @@ const data = {
               items: [],
               path: "/root/public/public nested 1/index.html",
               fileContentPath: "/exampleFile1.js",
+              depth: 4,
             },
             {
               id: "5",
@@ -34,6 +38,7 @@ const data = {
               isFolder: false,
               fileContentPath: "/exampleFile2.js",
               items: [],
+              depth: 4,
             },
           ],
         },
@@ -44,6 +49,54 @@ const data = {
           path: "/root/public/public_nested_file",
           fileContentPath: "/file.txt",
           items: [],
+          depth: 3,
+        },
+      ],
+    },
+    {
+      id: "2432",
+      name: "pubasdfsalic",
+      isFolder: true,
+      path: "/root/publadfic",
+      fileContentPath: "",
+      depth: 2,
+      items: [
+        {
+          id: "3243",
+          name: "public nested34 1",
+          isFolder: true,
+          path: "/root/publadfic/public ne34sted 1",
+          fileContentPath: "",
+          depth: 3,
+          items: [
+            {
+              id: "4345",
+              name: "example asdf1",
+              isFolder: false,
+              items: [],
+              path: "/root/publadfic/public ne34sted 1/index.html",
+              fileContentPath: "/exampleFile1.js",
+              depth: 4,
+            },
+            {
+              id: "33545",
+              name: "exampdfssde 2",
+              path: "/root/publadfic/public ne34sted 1/hello.html",
+              isFolder: false,
+              fileContentPath: "/exampleFile2.js",
+              items: [],
+              depth: 4,
+            },
+          ],
+        },
+        {
+          id: "634",
+          name: "public_nested_dfile",
+          isFolder: false,
+          path: "/root/publadfic/public_nested_file",
+          fileContentPath: "/file.txt",
+          items: [],
+          depth: 3,
         },
       ],
     },
@@ -53,6 +106,7 @@ const data = {
       isFolder: true,
       fileContentPath: "",
       path: "/root/src",
+      depth: 2,
       items: [
         {
           id: "8",
@@ -61,6 +115,7 @@ const data = {
           path: "/root/src/App.js",
           fileContentPath: "/file.txt",
           items: [],
+          depth: 3,
         },
         {
           id: "9",
@@ -69,6 +124,7 @@ const data = {
           path: "/root/src/Index.js",
           fileContentPath: "/file.txt",
           items: [],
+          depth: 3,
         },
         {
           id: "10",
@@ -77,6 +133,7 @@ const data = {
           path: "/root/src/styles.css",
           fileContentPath: "/file.txt",
           items: [],
+          depth: 3,
         },
       ],
     },
@@ -87,6 +144,7 @@ const data = {
       path: "/root/package.json",
       fileContentPath: "/file.txt",
       items: [],
+      depth: 2,
     },
   ],
 };
