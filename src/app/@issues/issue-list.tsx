@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+import { Circle } from "@/components/circle";
+import { VerticalLine } from "@/components/vertical-line";
 import { issuesCount } from "@/issues";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
-import { VerticalLine } from "@/components/vertical-line";
-import { Circle } from "@/components/circle";
+import { useSearchParams } from "next/navigation";
 import Arrow from "./Arrow.svg";
 
 export const IssueList = () => {
