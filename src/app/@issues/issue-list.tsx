@@ -10,13 +10,12 @@ import Arrow from "./Arrow.svg";
 
 export const IssueList = () => {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
   const params = new URLSearchParams(searchParams);
 
   return (
     <div className="flex flex-col gap-2 mt-5">
       {issuesCount.map((issues) => (
-        <Link href={`${pathname}/${issues.slug}?${params.toString()}`} key={issues.slug}>
+        <Link href={`${issues.slug}?${params.toString()}`} key={issues.slug}>
           <div className="bg-[#191D23] rounded py-3 px-5 flex gap-2 issue-list">
             <div className="flex items-center justify-start ml-3 gap-3 grow  basis-2/6">
               <Circle color={issues.color} />

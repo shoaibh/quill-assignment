@@ -6,6 +6,7 @@ import { Header } from "@/components/header";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MainBreadCrumbs } from "./main-breadcrumbs";
 import { Suspense } from "react";
+import { ProjectHeader } from "@/components/project/project-header";
 
 const lato = Lato({ weight: ["400"], subsets: ["latin"] });
 
@@ -16,8 +17,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  ide,
+  issues,
 }: Readonly<{
   children: React.ReactNode;
+  ide: React.ReactNode;
+  issues: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -26,7 +31,16 @@ export default function RootLayout({
           <FileContextProvider>
             <Header />
             <MainBreadCrumbs />
-            <Suspense>{children}</Suspense>
+            <Suspense>
+              <div className=" flex flex-col flex-1 bg-[#191D23] px-4 py-3 rounded max-h-[max-content] overflow-scroll">
+                <ProjectHeader />
+                {children}
+                <div className="flex mt-3 gap-3 max-w-full flex-1">
+                  {ide}
+                  {issues}
+                </div>
+              </div>
+            </Suspense>
           </FileContextProvider>
         </main>
       </body>

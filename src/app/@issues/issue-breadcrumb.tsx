@@ -24,5 +24,5 @@ export const IssueBreadCrumbs = () => {
       });
   }, [pathname]);
 
-  return <Breadcrumbs crumbs={[{ label: "Count of Issues", link: crumbs[2].link }, ...crumbs.slice(3)]} cn="mb-2" />;
+  return <Breadcrumbs crumbs={[{ label: "Count of Issues", link: "/" }, ...crumbs.slice(0)]} cn="mb-2" />;
 };

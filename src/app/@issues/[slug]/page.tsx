@@ -33,7 +33,7 @@ export default function HigherIssues({ params }: { params: { slug: string } }) {
         <HorizontalLine marginBottom={0} />
         <div className="flex flex-col gap-2">
           {foundIssue?.items.map((issue) => (
-            <Link href={`${pathname}/${issue.slug}?${newParams.toString()}`}>
+            <Link href={`${pathname}/${issue.slug}?${newParams.toString()}`} key={issue.slug}>
               <div key={issue.slug} className="bg-[#191D23] rounded py-3 px-5 flex gap-2 issue-list">
                 <div className="flex items-center justify-start grow gap-3 ">
                   <span className="text-sm text-secondaryTextColor">

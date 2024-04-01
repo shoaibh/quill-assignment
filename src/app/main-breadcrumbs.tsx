@@ -9,11 +9,11 @@ export const MainBreadCrumbs = () => {
 
   const crumbs = useMemo(() => {
     let currentLink = "";
-    return pathname
+    return "ai-audit/my-project/code-editor"
       .split("/")
       .filter((crumb) => crumb !== "")
       .map((crumb) => {
-        currentLink += `/${crumb}`;
+        currentLink += `/`;
         return {
           label: crumb
             .split("-")
