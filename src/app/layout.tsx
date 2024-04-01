@@ -1,12 +1,11 @@
+import { Header } from "@/components/header";
+import { ProjectHeader } from "@/components/project/project-header";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
-import "./globals.css";
-import { FileContextProvider } from "./file-context";
-import { Header } from "@/components/header";
-import { Breadcrumbs } from "@/components/breadcrumbs";
-import { MainBreadCrumbs } from "./main-breadcrumbs";
 import { Suspense } from "react";
-import { ProjectHeader } from "@/components/project/project-header";
+import { FileContextProvider } from "./file-context";
+import "./globals.css";
+import { MainBreadCrumbs } from "./main-breadcrumbs";
 
 const lato = Lato({ weight: ["400"], subsets: ["latin"] });
 

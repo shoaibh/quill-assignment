@@ -12,6 +12,8 @@ import Arrow from "../Arrow.svg";
 export default function HigherIssues({ params }: { params: { slug: string } }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  console.log("==", { searchParams });
+
   const newParams = new URLSearchParams(searchParams);
 
   const foundIssue = issuesCount.find((issue) => issue.slug === params.slug);

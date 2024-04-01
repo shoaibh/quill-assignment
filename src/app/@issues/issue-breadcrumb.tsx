@@ -2,7 +2,7 @@
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
+import React, { Suspense, useMemo } from "react";
 
 export const IssueBreadCrumbs = () => {
   const pathname = usePathname();
@@ -24,5 +24,9 @@ export const IssueBreadCrumbs = () => {
       });
   }, [pathname]);
 
-  return <Breadcrumbs crumbs={[{ label: "Count of Issues", link: "/" }, ...crumbs.slice(0)]} cn="mb-2" />;
+  return (
+    <Suspense>
+      <Breadcrumbs crumbs={[{ label: "Count of Issues", link: "/" }, ...crumbs.slice(0)]} cn="mb-2" />
+    </Suspense>
+  );
 };
