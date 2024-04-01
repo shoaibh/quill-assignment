@@ -38,7 +38,7 @@ export const Editor = ({ onFileClick }: { onFileClick: (id: string) => void }) =
   }, [selectedFile]);
 
   return (
-    <div className="max-w-[50%] rounded">
+    <div className="max-w-[48.6%] rounded">
       <MultipleFiles onFileClick={onFileClick} />
       <MonacoEditor
         options={{
@@ -46,12 +46,13 @@ export const Editor = ({ onFileClick }: { onFileClick: (id: string) => void }) =
             enabled: false,
           },
         }}
-        height="75vh"
+        height={"93%"}
         theme="vs-dark"
         onMount={(editor) => onMount(editor)}
         value={value}
         onChange={(value) => setValue(value)}
         saveViewState
+        className="max-h-[73vh]"
       />
     </div>
   );

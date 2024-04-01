@@ -24,7 +24,7 @@ export const MultipleFiles = ({ onFileClick }: { onFileClick: (id: string) => vo
           <div
             className={`flex justify-between items-center pl-5 pr-4 py-2 bg-slate-900 text-slate-600 cursor-pointer ${
               isSelected ? "bg-[#007AFF] rounded-tl rounded-tr text-white" : "text-[#5D677D]"
-            }   border-r border-solid border-white/5 whitespace-nowrap`}
+            } hover:text-white  border-r border-solid border-white/5 whitespace-nowrap`}
             onClick={() => onFileClick(file.id)}
             key={file.id}
           >

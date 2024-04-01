@@ -38,6 +38,14 @@
   fill: black; 
 }
 
+.profile:hover > svg.arrow > path {
+  fill: white
+}
+
+.issue-list:hover svg  {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

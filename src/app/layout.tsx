@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
-        <main className="p-[25px] h-screen bg-[#0D0F11] text-white flex flex-col ">
+        <main className="p-[25px] h-screen bg-[#0D0F11] text-white flex flex-col gap-4 ">
           <FileContextProvider>
             <Header />
             <MainBreadCrumbs />

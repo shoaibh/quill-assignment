@@ -1,5 +1,5 @@
 const Project = () => {
-  return <div className="border border-white border-solid flex-1"></div>;
+  return <div></div>;
 };
 
 export default Project;
